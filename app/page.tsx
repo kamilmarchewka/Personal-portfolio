@@ -1,3 +1,4 @@
+import BtnLink from "@/components/CTA/BtnLink";
 import BtnSolid from "@/components/CTA/BtnSolid";
 import Image from "next/image";
 
@@ -22,6 +23,7 @@ export default function Home() {
         </h1>
         {/* CTA */}
         <div>
+          <BtnLink>See my work</BtnLink>
           <BtnSolid>Get in touch!</BtnSolid>
         </div>
       </header>
