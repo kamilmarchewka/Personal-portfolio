@@ -17,20 +17,29 @@ export default function Navigation() {
       gsap.set(container.current, { autoAlpha: 0 });
       gsap.set(".nav-link", { translateY: "100%" });
 
-      tl.current = gsap.timeline({ paused: true });
-      // Toggling menu animation
-      tl.current.to(container.current, { autoAlpha: 1 }).to(".nav-link", {
-        translateY: "0%",
-        stagger: 0.07,
-        ease: "power2.inOut",
+      tl.current = gsap.timeline({
+        defaults: {
+          ease: "power2.inOut",
+        },
+        paused: true,
       });
+      // Toggling menu animation
+      tl.current.to(container.current, { autoAlpha: 1, duration: 0.35 }).to(
+        ".nav-link",
+        {
+          translateY: "0%",
+          stagger: 0.07,
+          duration: 0.7,
+        },
+        "<"
+      );
     },
     { scope: container }
   );
 
   useEffect(() => {
     if (!tl.current.isActive())
-      if (!navIsOpen) {
+      if (navIsOpen) {
         // Opening nav
         tl.current.play();
       } else {
@@ -39,7 +48,7 @@ export default function Navigation() {
   }, [navIsOpen]);
 
   return (
-    <nav className="bg-red-50 fixed z-[999] top-0 left-0 w-full flex justify-end items-center px-2 py-1 sm:px-5 sm:py-3">
+    <nav className="fixed z-[999] top-0 left-0 w-full flex justify-end items-center px-2 py-1 sm:px-5 sm:py-3">
       {/* <div>PL</div>
       <div>Light</div> */}
 
