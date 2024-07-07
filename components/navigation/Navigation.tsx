@@ -15,10 +15,15 @@ export default function Navigation() {
     () => {
       // Initial states
       gsap.set(container.current, { autoAlpha: 0 });
+      gsap.set(".nav-link", { translateY: "100%" });
 
       tl.current = gsap.timeline({ paused: true });
       // Toggling menu animation
-      tl.current.to(container.current, { autoAlpha: 1 });
+      tl.current.to(container.current, { autoAlpha: 1 }).to(".nav-link", {
+        translateY: "0%",
+        stagger: 0.07,
+        ease: "power2.inOut",
+      });
     },
     { scope: container }
   );
@@ -51,23 +56,23 @@ export default function Navigation() {
         className="flex justify-start items-center pl-44 bg-black text-white absolute -z-[1] w-full h-screen left-0 top-0"
       >
         <ul className="flex flex-col gap-7 text-6xl ">
-          <li>
-            <Link className="nav-link" href="/">
+          <li className=" overflow-hidden">
+            <Link className="nav-link block" href="/">
               About me
             </Link>
           </li>
-          <li>
-            <Link className="nav-link" href="/">
+          <li className=" overflow-hidden">
+            <Link className="nav-link block" href="/">
               Projects
             </Link>
           </li>
-          <li>
-            <Link className="nav-link" href="/">
+          <li className=" overflow-hidden">
+            <Link className="nav-link block" href="/">
               Education
             </Link>
           </li>
-          <li>
-            <Link className="nav-link" href="/">
+          <li className=" overflow-hidden">
+            <Link className="nav-link block" href="/">
               Contact
             </Link>
           </li>
