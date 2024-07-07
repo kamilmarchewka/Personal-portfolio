@@ -17,6 +17,52 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "open-menu-upper-line-forward": {
+          "0%": {
+            transform: "translateY(0%) rotate(0deg)",
+          },
+          "50%": {
+            transform: "translateY(200%) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translateY(200%) rotate(45deg)",
+          },
+        },
+        "open-menu-upper-line-backward": {
+          "0%": {
+            transform: "translateY(200%) rotate(45deg)",
+          },
+          "50%": {
+            transform: "translateY(200%) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translateY(0%) rotate(0deg)",
+          },
+        },
+        "open-menu-lower-line-forward": {
+          "0%": {
+            transform: "translateY(0%) rotate(0deg)",
+          },
+          "50%": {
+            transform: "translateY(-200%) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translateY(-200%) rotate(-45deg)",
+          },
+        },
+        "open-menu-lower-line-backward": {
+          "0%": {
+            transform: "translateY(-200%) rotate(-45deg)",
+          },
+          "50%": {
+            transform: "translateY(-200%) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translateY(0%) rotate(0deg)",
+          },
+        },
+      },
     },
   },
   plugins: [],

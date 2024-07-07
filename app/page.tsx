@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="px-2 max-w-7xl mx-auto sm:px-10 md:px-16">
       <header className="min-h-screen flex flex-col items-center sm:items-start gap-16 pt-20">
-        <h1 className="text-3xl uppercase -tracking-wide sm:text-5xl sm:text-7xl lg:text-9xl">
+        <h1 className="text-3xl uppercase -tracking-wide sm:text-5xl md:text-7xl lg:text-9xl">
           <div className="flex justify-center sm:justify-start">
             {name.split("").map((letter) => (
               <span>{letter}</span>
