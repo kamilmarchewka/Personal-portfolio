@@ -1,12 +1,8 @@
-"use client";
 import React, { useState } from "react";
 
-export default function Hamburger() {
-  const [isClicked, setIsClicked] = useState(false);
-
+export default function Hamburger({ isClicked }: { isClicked: boolean }) {
   return (
     <button
-      onClick={() => setIsClicked((prev) => !prev)}
       className={`flex flex-col justify-center items-center gap-1 w-14 aspect-square rounded-full transition-colors ${
         isClicked ? "bg-black" : "bg-black"
       }`}
