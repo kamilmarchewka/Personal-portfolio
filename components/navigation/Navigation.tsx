@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Navigation() {
-  const [navIsOpen, setNavIsOpen] = useState(true);
+  const [navIsOpen, setNavIsOpen] = useState(false);
 
   const container = useRef(null);
   const tl = useRef<any>(null);
@@ -39,7 +39,7 @@ export default function Navigation() {
   }, [navIsOpen]);
 
   return (
-    <nav className="fixed z-[999] top-0 left-0 w-full flex justify-end items-center">
+    <nav className="bg-red-50 fixed z-[999] top-0 left-0 w-full flex justify-end items-center px-2 py-1 sm:px-5 sm:py-3">
       {/* <div>PL</div>
       <div>Light</div> */}
 
@@ -53,9 +53,9 @@ export default function Navigation() {
 
       <div
         ref={container}
-        className="flex justify-start items-center pl-44 bg-black text-white absolute -z-[1] w-full h-screen left-0 top-0"
+        className="flex justify-start items-center pl-7 bg-black text-white absolute -z-[1] w-full h-screen left-0 top-0"
       >
-        <ul className="flex flex-col gap-7 text-6xl ">
+        <ul className="flex flex-col gap-3 text-2xl sm:text-5xl sm:gap-5 md:text-7xl lg:text-8xl lg:gap-7">
           <li className=" overflow-hidden">
             <Link className="nav-link block" href="/">
               About me
