@@ -8,21 +8,21 @@ export default function Home() {
 
   return (
     <main className="px-2 max-w-7xl mx-auto sm:px-10 md:px-16">
-      <header className="min-h-screen">
-        <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-9xl">
-          <div>
+      <header className="min-h-screen flex flex-col items-center sm:items-start gap-16 pt-20">
+        <h1 className="text-3xl uppercase -tracking-wide sm:text-5xl sm:text-7xl lg:text-9xl">
+          <div className="flex justify-center sm:justify-start">
             {name.split("").map((letter) => (
               <span>{letter}</span>
             ))}
           </div>
-          <div>
+          <div className="flex justify-center sm:justify-start">
             {surname.split("").map((letter) => (
               <span>{letter}</span>
             ))}
           </div>
         </h1>
         {/* CTA */}
-        <div>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-8">
           <BtnLink>See my work</BtnLink>
           <BtnSolid>Get in touch!</BtnSolid>
         </div>
